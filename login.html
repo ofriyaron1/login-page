@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+    <center>
+        <a href="#" class="brand-logo">
+            <img src="img.png" style="width: 180px; margin-top: 10px;">
+        </a>
+    </center>
+     <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0"onclick=login()>Login</button>
+      </form>
+    </div>
+  </div>
+    
+    
+ <!-- Firebase -->
+    
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyCuyQYn4Akf0zvqQbqjtUN12KDVga5MKmo",
+            authDomain: "moveo-a954a.firebaseapp.com",
+            projectId: "moveo-a954a",
+            storageBucket: "moveo-a954a.appspot.com",
+            messagingSenderId: "1007308819159",
+            appId: "1:1007308819159:web:5cc13ba8db2b16f8e6fe92",
+            measurementId: "G-173Z60XEJE"
+            };
+        firebase.initializeApp(config);
+
+        // Initialize Firebase
+        const auth =firebase.auth();
+        const db = firebase.firestore();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="profile.html"></script>
+    <script src="auth.js"></script>
+
+</body>
+</html>
