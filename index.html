@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>Login Page</title>
      <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
      <link rel="stylesheet" href="style.css">
 </head>
@@ -14,11 +14,21 @@
             <img src="img.png" style="width: 180px; margin-top: 10px;">
         </a>
     </center>
-     <!-- profile MODAL -->
-  <div id="modal-profile" class="modal">
-    <div class="modal-content center-align">
-        <h4>My Profile</h4>
-    <div class="profile-data"></div>
+     <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0"onclick=login()>Login</button>
+      </form>
     </div>
   </div>
     
@@ -45,11 +55,9 @@
         const db = firebase.firestore();
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="index.html"></script>
+    <script src="profile.html"></script>
     <script src="auth.js"></script>
     <script src="index.js"></script>
-
-    
 
 </body>
 </html>

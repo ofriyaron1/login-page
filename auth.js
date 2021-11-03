@@ -1,3 +1,13 @@
+auth.onAuthStateChanged(user => {
+  if (user) {
+    db.collection('users').onSnapshot(snapshot => {
+      setupUI(user);
+    }, err => console.log(err.message));
+  } else {
+    setupUI();
+  }
+});
+
 function login(){
     // login
     const loginForm = document.querySelector('#login-form');
@@ -21,30 +31,9 @@ function login(){
     });
 };
 
-auth.onAuthStateChanged(user => {
-    if (user) {
-      db.collection('users').onSnapshot(snapshot => {
-        setupUI(user);
-      }, err => console.log(err.message));
-    } else {
-      setupUI();
-    }
-  });
 
-  const PD =document.querySelector('.profile_data');
-  const setupUI = (user) => {
-    if (user) {
-      // profile info
-      db.collection('users').doc(user.uid).get().then(doc => {
-        const html = `
-          <div> ${user.email}</div>
-          <div>${doc.data().address}</div>
-        `;
-        PD.innerHTML = html;
-      });
-    } else {
-      // clear account info
-      PD.innerHTML = '';
-    }
-  };
 
+
+
+
+  
